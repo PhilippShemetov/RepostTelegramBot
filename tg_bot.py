@@ -12,7 +12,7 @@ from telebot import types
 
 from urllib.parse import urlparse, urljoin
 
-API_TOKEN = '6570738008:AAFDfU8-kWrAe-jFlazZqbXaxQxWV1yCOTw'
+API_TOKEN = ''
 
 bot = telebot.TeleBot(API_TOKEN)
 
