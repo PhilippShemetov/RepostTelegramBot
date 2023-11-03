@@ -12,7 +12,7 @@ from telebot import types
 
 from urllib.parse import urlparse, urljoin
 
-API_TOKEN = ''
+API_TOKEN = '6570738008:AAFDfU8-kWrAe-jFlazZqbXaxQxWV1yCOTw'
 
 bot = telebot.TeleBot(API_TOKEN)
 
@@ -270,22 +270,6 @@ def send_images_or_gifs(message, selected_chat_id, user_id):
                                 img_url = img.get("src")
                                 img_url = urljoin(user_url, img_url)
                                 bot.send_photo(selected_chat_id, img_url)
-                    # if "гиф анимация" in chat_data['parsing_data'][user_url]['list_of_titles']:
-                    #     for image_class in chat_data['parsing_data'][user_url]['image_classes']:
-                    #         video = image_class.find_all("span")
-                    #         for span in video:
-                    #             link = span.find("a")
-                    #             if link:
-                    #                 gif_url = link.get("href")
-                    #                 gif_url = urljoin(user_url, gif_url)
-                    #                 bot.send_animation(selected_chat_id, gif_url)
-                    # else:
-                    #     for image_class in chat_data['parsing_data'][user_url]['image_classes']: 
-                    #         imgs = image_class.find_all("img")
-                    #         for img in imgs:
-                    #             img_url = img.get("src")
-                    #             img_url = urljoin(user_url, img_url)
-                    #             bot.send_photo(selected_chat_id, img_url)
                     if user_url in chat_data['id_of_images']:
                         chat_data['id_of_images'][user_url].append(post_class.get("id"))
                     else:
